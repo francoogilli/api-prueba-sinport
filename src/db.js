@@ -1,18 +1,13 @@
-import { createPool } from "mysql2/promise";
+import mysql from 'mysql2/promise';
 
-const pool = createPool({
+const config = {
     host: 'localhost',
-    user: 'root',
-    database: 'empleadosdb',
-    password: 'Francog15',
-});
+    user: 'impactos_empleados_user',
+    password: 'XMr{SF7OvIIB',
+    database: 'impactos_empleadosdb',
+    
+};
 
-
-// const pool = createPool({
-//     host: 'ep-muddy-glitter-a4w51pms-pooler.us-east-1.aws.neon.tech',
-//     user: 'default',
-//     database: 'verceldb',
-//     password: 'ct9BWjhD2COr',
-// });
+const pool = mysql.createPool(config);
 
 export default pool;
